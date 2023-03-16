@@ -1,0 +1,25 @@
+<div class="displayablediv">
+<h3>Регистрация</h3>
+<label> Имя пользователя
+    <input [(ngModel)]="username" type="text"><br>
+</label>
+<label> Почта
+    <input [(ngModel)]="email" type="text"><br>
+</label>
+<label> Дата рождения
+    <input [(ngModel)]="birthDate" type="date"><br>
+</label>
+<label> Пароль
+    <input [(ngModel)]="password" type="password"><br>
+</label>
+<label> Повторите пароль
+    <input [(ngModel)]="passwordCheck" type="password"><br>
+</label>
+<label> Загрузить фото на аватар
+    <input (change)="onFileChange($event)" type='file' accept="image/jpeg, image/png, image/jpg, image/bmp">
+</label>
+<button (click)="navigateToLogin()">вход</button>
+<button (click)="signUp()">зарегистрироваться</button>
+
+<p id="incorrectInput">{{incorrectInput}}</p>
+</div>

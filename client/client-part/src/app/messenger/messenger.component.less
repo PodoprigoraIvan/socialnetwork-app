@@ -1,0 +1,61 @@
+@main-color: rgb(22, 194, 182);
+@list-item-color: rgb(1, 43, 110);
+@hover-color: rgb(69, 231, 220);
+div#messagesdiv{
+    background-color: aquamarine;
+    padding: 10px;
+    overflow-y: auto;
+    height: 60vh;
+    width: 50vw;
+    border-radius: 10px;
+    p {
+        width: fit-content;
+        background-color: rgb(19, 178, 125);
+        padding: 3px;
+        border-radius: 3px;
+    }
+    margin-bottom: 3px;
+}
+
+p.my_message{
+    text-align: right;
+    margin-left: auto;
+}
+
+p.friend_message{
+    text-align: left;
+}
+
+div#dialogdiv{
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: antiquewhite;
+    float:left;
+}
+
+div#friendsdiv{
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: @main-color;
+    float:left;
+    margin-top: auto;
+    p{
+        cursor: pointer;
+        background-color: @list-item-color;
+        border-radius: 5px;
+        padding: 3px;
+        color: white;
+        &:hover{
+            color: black;
+            background-color: @hover-color;
+        }
+    }
+    margin-right: 15px;
+}
+
+button{
+    display: block;
+    margin-bottom: 10px;
+}

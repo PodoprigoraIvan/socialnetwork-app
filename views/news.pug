@@ -1,0 +1,23 @@
+html
+  - var title
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/public/style.css")
+    script(src="https://kit.fontawesome.com/c50584688c.js" crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous")
+    script(src="/public/index.js") 
+    title=title
+  body
+    h1=title
+    div.menubuttons
+      button(onclick="window.location.href = '/'") Главная страница
+    div.accordion
+      each post in news
+        h3.block-title= "Автор: " + post.userName
+        section.contetnt-block
+          .info
+            p=post.text
+    

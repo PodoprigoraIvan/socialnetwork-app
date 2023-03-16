@@ -1,0 +1,5 @@
+<button (click)="navigateToMainPage()">перейти в профиль</button>
+<h3>Новости друзей</h3>
+<div id="friendsnewsdiv">
+    <p *ngFor="let post of newsList"><span>Автор: {{post.author}}</span><br>{{post.text}}</p>
+</div>

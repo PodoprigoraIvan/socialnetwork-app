@@ -1,0 +1,41 @@
+<div id="menudiv">
+    <button (click)="logOut()">выйти</button>
+    <button (click)="navigateToPeoplesearch()">поиск людей</button>
+    <button (click)="navigateToFriendNews()">новости друзей</button>
+    <button (click)="navigateToMessenger()">мессенджер</button>
+    <button (click)="navigateToAdministration()" [hidden]="!isAdmin">администрирование</button>
+</div>
+<div class="floatdiv" id="profilediv">
+    <h3>Мой профиль</h3>
+    <p>Аватар</p>
+    <img [width]=100 [height]=100 [src]='imgSrc'>
+    <label id="uploadphoto"> Загрузить фото на аватар
+        <input (change)="onFileChange($event)" type='file' accept="image/jpeg, image/png, image/jpg, image/bmp">
+        <button (click)="changeAvatar()">Изменить аватар</button>
+    </label>
+    <h3>Информация</h3>
+    <p>Имя: {{username}}<span></span></p>
+    <p>Email: {{email}}<span></span></p>
+    <p>Дата рождения: {{birthdate}}<span></span></p>
+    <button (click)="openEdit()">Изменить информацию</button>
+</div>
+<div class="floatdiv">
+    <h3>Мои новости</h3>
+    <textarea [(ngModel)]="postText"></textarea>
+    <button id="addpost" (click)="addPost()">Создать новость</button>
+    <div id="newsdiv">
+        <p class="post" *ngFor="let post of myNewsList">{{post}}</p>
+    </div>
+</div>
+
+<div id="editdiv" class="displayablediv" [hidden]="!editOpened">
+    <h3>Изменение информации</h3>
+    <label> Email
+        <input [(ngModel)]="emailInput" type="text"><br>
+    </label>
+    <label> Дата рождения
+        <input [(ngModel)]="birthdateInput" type="date"><br>
+    </label>
+    <button (click)="closeEdit()">закрыть</button>
+    <button (click)="edit()">изменить информацию</button>
+</div>

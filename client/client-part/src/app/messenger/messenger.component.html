@@ -1,0 +1,15 @@
+<button (click)="navigateToMainPage()">перейти в профиль</button>
+<div id="friendsdiv">
+    <h3>Друзья:</h3>
+    <p class="friend" *ngFor="let friend of friendsList" (click)="openDialog(friend.id)">{{friend.name}}</p>
+</div>
+<div id="dialogdiv" [hidden]="!dialogOpened">
+    <p>Чат с <b>{{curFriendName}}</b></p>
+    <div id="messagesdiv" >
+        <p *ngFor="let message of dialogMessages" [class.my_message]="message.id != curFriendId" [class.friend_message]="message.id == curFriendId">{{message.text}}</p>
+    </div>
+    <label id="sendmessage"> Сообщение
+        <input [(ngModel)]="message" (keydown)="onKeydown($event)"><br>
+        <button (click)="sendMessage()">отправить</button>
+    </label>
+</div>

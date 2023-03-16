@@ -1,0 +1,13 @@
+<div class="displayablediv">
+<h3>Вход</h3>
+<label> Имя пользователя
+<input [(ngModel)]="username"><br>
+</label>
+<label> Пароль
+<input [(ngModel)]="password" type="password"><br>
+</label>
+<button (click)="logIn()">войти</button>
+<button (click)="navigateToSignUp()">регистрация</button>
+
+<p id="incorrectInput">{{incorrectInput}}</p>
+</div>

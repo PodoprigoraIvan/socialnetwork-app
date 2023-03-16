@@ -1,0 +1,42 @@
+@main-color: rgb(22, 194, 182);
+@list-item-color: rgb(1, 43, 110);
+@hover-color: rgb(69, 231, 220);
+
+div#peoplediv{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: bisque;
+    width: fit-content;
+    height: fit-content;
+    overflow-y: auto;
+}
+
+div#openedprofile{
+    button#addfriend{
+        background-color: rgb(1, 83, 0);
+        color: white;
+        &:hover{
+            background-color: rgb(2, 116, 0);
+        }
+    }
+    button#deletefriend{
+        background-color: rgb(178, 0, 0);
+        color: white;
+        &:hover{
+            background-color: rgb(213, 0, 0);
+        }
+    }
+}
+
+p.user{
+    cursor: pointer;
+    width: 40vw;
+    background-color: @list-item-color;
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    &:hover{
+        color: black;
+        background-color: @hover-color;
+    }
+}
